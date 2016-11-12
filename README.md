@@ -18,7 +18,7 @@ It is especially useful on private servers, where gamble-cards are free, but cer
 ``` bash
 $ javac -d ./build src/de/drdelay/gamblebot/*.java
 $ cd build
-$ jar cfe GambleBot.jar de.drdelay.gamblebot.GambleBot *
+$ jar cfe GambleBot.jar de.drdelay.gamblebot.GambleBot de/drdelay/gamblebot/*.class
 ```
 
 ## Usage
