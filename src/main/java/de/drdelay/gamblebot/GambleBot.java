@@ -17,8 +17,11 @@ import java.util.stream.Collectors;
 import static de.drdelay.aobots.common.utils.DelayService.waitTime;
 
 public class GambleBot implements AbortsOnEsc {
+    // Dependencies
     private ShowStatusAble logger;
     private HumanEmulatingRobot robot;
+
+    // Positions determined at start
     private Point prefGm = null;
     private Point prefRe = null;
     private Point suffGm = null;
@@ -28,18 +31,24 @@ public class GambleBot implements AbortsOnEsc {
     private Point factor = null;
     private Point sourceIn = null;
     private BufferedImage enchant;
+
+    // config.txt
     private ArrayList<BufferedImage> prefixImg = null;
     private ArrayList<BufferedImage> suffixImg = null;
+
+    // Iteration counters
     private boolean prefixFound = false;
     private boolean suffixFound = false;
     private int gambles = 0;
+
+    // Config
     private Integer factordelay;
     private Integer showdelay;
     private Integer numberW;
 
     private EscHitException shouldStop;
 
-    // WarOfTheSky:
+    // Offsets /WarOfTheSky:
     private final static int factorButtonXOffset = 545;
     private final static int factorButtonYOffset = 203;
     private final static int itemFactoryInputXOffset = 467;
@@ -98,6 +107,7 @@ public class GambleBot implements AbortsOnEsc {
         enchant = FS.loadRequiredImage("enchant.png");
 
         this.logger = logger;
+
         this.factordelay = factordelay;
         this.showdelay = showdelay;
         this.numberW = numberW;
