@@ -12,3 +12,7 @@ Thumbs.db
 /target
 
 /.idea
+
+/devpwd
+
+/build/production
