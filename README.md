@@ -33,6 +33,7 @@ Check the [Releases][link-releases] section for compiled versions.
 ``` bash
 $ java -jar GambleBot.jar
 ```
+* Run the program (*cmd*) as admin if the Robot (mouse movement) doesn't work
 
 ## Config
 
@@ -49,11 +50,13 @@ You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.pro
 * 1: Identifier
 * 54-56: Weapons to gamble
 * It does not matter where the gambles and resets are, as long you linked/copied the correct images
+* There can be more items in your inventory than 60, it only matters what you see when fully scrolled down. Sometimes, if the last row is filled completely, a new line will appear and disappear based on whether the item is currently in lab; this can cause issues, so you should avoid filling the last line up completely.
+* The items to gamble must not have only 1 fix and must at least be Enchant-1
 
 ## Resources
 
 Fixes and positions are scanned by comparing pixel-wise against the provided image files. Even the slightest difference in color matters.
-This means, on certain servers you may have to create your own files. Black (#000000) pixels are ignored, so fill up anything but the text with.
+This means, on certain servers you may have to create your own files. Black (`#000000`) pixels are ignored, so fill up anything but the text with.
 
 ## Credits
 
