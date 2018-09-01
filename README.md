@@ -1,7 +1,6 @@
 # GambleBot - AceOnline lab bruteforce-gambling
 
 [![Software License][ico-license]](LICENSE.md)
-[![Latest Stable Version][ico-githubversion]][link-releases]
 
 This program can use the laboratory in AceOnline like games and put specified fixes on your items.
 It is especially useful on private servers, where gamble-cards are free, but certain fixes really rare and require a huge amount of tries.
@@ -12,14 +11,20 @@ It is especially useful on private servers, where gamble-cards are free, but cer
 * Specify a list of acceptable pre- & suffixes
 * Automatically build the next weapon once one if finished, useful if you need many for Legend-upgrade
 * Ressources completely customizeable by you
+* Break the loop by hitting "ESC" (also closes lab)
+* Randomized delays to make detection harder
 
-## Build
+## Build - todo! new structure, systemhook dep
 
 ``` bash
 $ javac -d ./build src/de/drdelay/gamblebot/*.java
 $ cd build
 $ jar cfe GambleBot.jar de.drdelay.gamblebot.GambleBot de/drdelay/gamblebot/*.class
 ```
+
+## Download
+
+Check the [Releases][link-releases] section for compiled versions.
 
 ## Usage
 
@@ -28,13 +33,16 @@ $ jar cfe GambleBot.jar de.drdelay.gamblebot.GambleBot de/drdelay/gamblebot/*.cl
 * Copy or link the fixes you specified
 * Set up your [ingame inventory](#inventory)
 ``` bash
-$ cp config.dist.txt config.txt
-$ java -jar GambleBot.jar [factordelay showdelay numberOfWeaps]
+$ java -jar GambleBot.jar
 ```
 
-* factordelay (default: 1500): MS to wait between the two factor button clicks
-* showdelay (default: 500): MS to hover the weapon between gamble attempts
-* numberOfWeaps (default: 1): It's possible to auto-gamble a bunch of items at once
+## Config
+
+You can create a file `config[.properties](https://en.wikipedia.org/wiki/.properties#Format)` with these values:
+
+* factordelay (default: 400): MS to wait between the two factor button clicks
+* showdelay (default: 1250): MS to hover the weapon between gamble attempts
+* numberW (default: 1): It's possible to auto-gamble a bunch of items at once
 
 ## Inventory
 
@@ -58,7 +66,6 @@ This means, on certain servers you may have to create your own files. Black (#00
 The MIT License (MIT). Please see the [License File](LICENSE.md) for more information.
 
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-githubversion]: https://poser.pugx.org/DrDelay/GambleBot/v/stable
 
 [link-releases]: https://github.com/DrDelay/GambleBot/releases
 [link-contributors]: ../../contributors
