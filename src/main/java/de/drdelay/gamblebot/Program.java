@@ -13,11 +13,6 @@ public class Program {
     public static void main(String args[]) {
         System.out.println("Welcome to GambleBot!");
         System.out.println();
-        System.out.println("Run this program as admin if the Robot (mouse movement) doesn't work");
-        System.out.println("Put a searcheye-stack at the top left corner of your inventory");
-        System.out.println("Put your gamble-item in Pos 40"); // todo
-        System.out.println("Item must not have only 1 fix and must at least be Enchant 1 at the beginning");
-        System.out.println();
 
         run();
 
@@ -29,6 +24,7 @@ public class Program {
         defaultProperties.setProperty("factordelay", "400");
         defaultProperties.setProperty("showdelay", "1250");
         defaultProperties.setProperty("numberW", "1");
+        defaultProperties.setProperty("lastItemPos", "56");
 
         Properties prop = new Properties(defaultProperties);
 
@@ -46,7 +42,8 @@ public class Program {
                 new StreamLogger(System.out),
                 Integer.parseInt(prop.getProperty("factordelay")),
                 Integer.parseInt(prop.getProperty("showdelay")),
-                Integer.parseInt(prop.getProperty("numberW"))
+                Integer.parseInt(prop.getProperty("numberW")),
+                Integer.parseInt(prop.getProperty("lastItemPos"))
         );
 
         System.out.println("Starting in 4s - focus the game-window!");

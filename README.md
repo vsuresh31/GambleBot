@@ -39,16 +39,17 @@ $ java -jar GambleBot.jar
 
 You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.properties#Format) with these values:
 
-* factordelay (default: 400): MS to wait between the two factor button clicks
-* showdelay (default: 1250): MS to hover the weapon between gamble attempts
-* numberW (default: 1): It's possible to auto-gamble a bunch of items at once
+* `factordelay`: MS to wait between the two factor button clicks - *default: 400*
+* `showdelay`: MS to hover the weapon between gamble attempts - *default: 1250*
+* `numberW`: It's possible to auto-gamble a bunch of items at once - *default: 1* - **todo !currently not working!**
+* `lastItemPos`: How much items / position of gamble-item in inventory - *default: 56*
 
 ## Inventory
 
 ![Example Inventory](/res/example_inv.png)
 
 * 1: Identifier
-* 54-56: Weapons to gamble
+* Last slots: Weapons to gamble (Index numbers in this example: 54-56, you'd put `lastItemPos=56` and `numberW=3`
 * It does not matter where the gambles and resets are, as long you linked/copied the correct images
 * There can be more items in your inventory than 60, it only matters what you see when fully scrolled down. Sometimes, if the last row is filled completely, a new line will appear and disappear based on whether the item is currently in lab; this can cause issues, so you should avoid filling the last line up completely.
 * The items to gamble must not have only 1 fix and must at least be Enchant-1

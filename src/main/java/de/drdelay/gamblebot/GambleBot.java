@@ -45,6 +45,7 @@ public class GambleBot implements AbortsOnEsc {
     private Integer factordelay;
     private Integer showdelay;
     private Integer numberW;
+    private Integer inviSize;
 
     private EscHitException shouldStop;
 
@@ -97,7 +98,7 @@ public class GambleBot implements AbortsOnEsc {
         }
     }
 
-    public GambleBot(ShowStatusAble logger, int factordelay, int showdelay, int numberW) throws RuntimeException {
+    public GambleBot(ShowStatusAble logger, int factordelay, int showdelay, int numberW, int inviSize) throws RuntimeException {
         try {
             robot = new HumanEmulatingRobot();
         } catch (AWTException e) {
@@ -111,6 +112,7 @@ public class GambleBot implements AbortsOnEsc {
         this.factordelay = factordelay;
         this.showdelay = showdelay;
         this.numberW = numberW;
+        this.inviSize = inviSize;
 
         logger.setStatus("Created");
     }
@@ -214,7 +216,7 @@ public class GambleBot implements AbortsOnEsc {
 
         Point searcheye = ScreenCoordinateTools.findRequiredItem("searcheye.png", screen);
 
-        item = ScreenCoordinateTools.calculateItemAtIndex(31, searcheye); // todo: dynamic pos
+        item = ScreenCoordinateTools.calculateItemAtIndex(this.inviSize, searcheye);
         factor = new Point(searcheye.x + factorButtonXOffset, searcheye.y + factorButtonYOffset);
         sourceIn = new Point(searcheye.x + itemFactoryInputXOffset, searcheye.y + itemFactoryInputYOffset);
 
