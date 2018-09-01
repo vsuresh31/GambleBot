@@ -1,9 +1,0 @@
-Bio.png
-Attack.png
-Maraves.png
-Legend.png
--
-ofBio.png
-ofLegend.png
-Attack.png
-Maraves.png

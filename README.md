@@ -14,12 +14,10 @@ It is especially useful on private servers, where gamble-cards are free, but cer
 * Break the loop by hitting "ESC" (also closes lab)
 * Randomized delays to make detection harder
 
-## Build - todo! new structure, systemhook dep
+## Build
 
 ``` bash
-$ javac -d ./build src/de/drdelay/gamblebot/*.java
-$ cd build
-$ jar cfe GambleBot.jar de.drdelay.gamblebot.GambleBot de/drdelay/gamblebot/*.class
+$ mvn clean compile assembly:single
 ```
 
 ## Download
