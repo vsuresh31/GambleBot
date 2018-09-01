@@ -45,7 +45,7 @@ public class GambleBot implements AbortsOnEsc {
     private final static int itemFactoryInputXOffset = 467;
     private final static int itemFactoryInputYOffset = 68;
 
-    void run() throws RuntimeException {
+    public void run() throws RuntimeException {
         EscTermination escSrv = new EscTermination(this);
         escSrv.register();
         try {
