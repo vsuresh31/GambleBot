@@ -317,7 +317,7 @@ public class GambleBot implements AbortsOnEsc {
         if (enPos == null) {
             return null;
         }
-        return screen.getSubimage(enPos.x - 154, enPos.y + 18, 334, 17);
+        return screen.getSubimage(enPos.x - 154, enPos.y + 18, 334, 20);
     }
 
     private void factor() {
