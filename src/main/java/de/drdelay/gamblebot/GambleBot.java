@@ -130,6 +130,12 @@ public class GambleBot implements AbortsOnEsc {
         }
         waitTime(300);
         checkFixes();
+
+        if (prefixFound && suffixFound) {
+            logger.addLogLine("Pre- and Suffix found after " + gambles + " gambles");
+            return;
+        }
+
         moveItemIntoLab();
         waitTime(75);
         if (!prefixFound && !suffixFound) {
@@ -146,8 +152,6 @@ public class GambleBot implements AbortsOnEsc {
             sufRe();
         } else if (!prefixFound) {
             preRe();
-        } else {
-            logger.addLogLine("Pre- and Suffix found after " + gambles + " gambles");
         }
         waitTime(75);
         factor();
@@ -155,6 +159,10 @@ public class GambleBot implements AbortsOnEsc {
     }
 
     private void addFixes() {
+        if (prefixFound && suffixFound) {
+            return;
+        }
+
         itemIn(item);
         waitTime(75);
         gambles++;
