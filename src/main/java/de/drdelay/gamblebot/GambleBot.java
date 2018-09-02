@@ -60,9 +60,8 @@ public class GambleBot implements AbortsOnEsc {
         escSrv.register();
         try {
             doRun();
-        } catch (RuntimeException e) {
+        } finally {
             escSrv.shutdown();
-            throw e;
         }
     }
 
