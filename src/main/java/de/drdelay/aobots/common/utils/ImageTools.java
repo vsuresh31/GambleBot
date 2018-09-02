@@ -4,7 +4,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class ImageTools {
-    private static boolean isTransp(int pixel) {
+    private static boolean isTransp(int pixel, boolean hasAlpha) {
+        if (hasAlpha) {
+            if (new Color(pixel, true).getAlpha() != 255) {
+                return true;
+            }
+        }
         return pixel == -16777216;
     }
 
@@ -24,11 +29,12 @@ public class ImageTools {
     private static boolean compareImg(BufferedImage needle, BufferedImage haystack, int hayOffX, int hayOffY) {
         int needW = needle.getWidth() - 1;
         int needH = needle.getHeight() - 1;
+        boolean hasAlpha = needle.getTransparency() != Transparency.OPAQUE;
         for (int nIx = 0; nIx < needW; nIx++) {
             for (int nIy = 0; nIy < needH; nIy++) {
                 int needleRGB = needle.getRGB(nIx, nIy);
                 int haystackRGB = haystack.getRGB(hayOffX + nIx, hayOffY + nIy);
-                if (needleRGB != haystackRGB && !isTransp(needleRGB)) {
+                if (needleRGB != haystackRGB && !isTransp(needleRGB, hasAlpha)) {
                     return false;
                 }
             }
