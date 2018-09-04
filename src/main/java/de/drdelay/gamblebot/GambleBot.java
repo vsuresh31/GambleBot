@@ -234,7 +234,7 @@ public class GambleBot implements AbortsOnEsc {
 
         loadCfg();
 
-        itemIn = item; // todo: respect numW
+        itemIn = ScreenCoordinateTools.calculateItemAtIndex((this.inviSize - numberW) + 1, searcheye);
 
         logger.addLogLine("Prefix Gamble found at " + prefGm.x + "/" + prefGm.y);
         logger.addLogLine("Prefix Removal found at " + prefRe.x + "/" + prefRe.y);

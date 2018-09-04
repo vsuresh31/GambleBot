@@ -41,7 +41,7 @@ You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.pro
 
 * `factordelay`: MS to wait between the two factor button clicks - *default: 400*
 * `showdelay`: MS to hover the weapon between gamble attempts - *default: 1250*
-* `numberW`: It's possible to auto-gamble a bunch of items at once - *default: 1* - **todo !currently not working!**
+* `numberW`: It's possible to auto-gamble a bunch of items at once - *default: 1*
 * `lastItemPos`: How much items / position of gamble-item in inventory - *default: 56*
 
 ## Inventory
