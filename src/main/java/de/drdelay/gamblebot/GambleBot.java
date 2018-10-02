@@ -49,11 +49,19 @@ public class GambleBot implements AbortsOnEsc {
 
     private EscHitException shouldStop;
 
-    // Offsets /WarOfTheSky:
+    // Offsets /WarOfTheSky / EP3:
+    /*
     private final static int factorButtonXOffset = 545;
     private final static int factorButtonYOffset = 203;
     private final static int itemFactoryInputXOffset = 467;
     private final static int itemFactoryInputYOffset = 68;
+    */
+
+    // Offsets EP4 / CR
+    private final static int factorButtonXOffset = 632;
+    private final static int factorButtonYOffset = -24;
+    private final static int itemFactoryInputXOffset = 548;
+    private final static int itemFactoryInputYOffset = -157;
 
     public void run() throws RuntimeException {
         EscTermination escSrv = new EscTermination(this);
@@ -118,7 +126,7 @@ public class GambleBot implements AbortsOnEsc {
 
     private void enchantDone() {
         robot.moveHuman(item, 120);
-        waitTime(3380); // WarOfTheSky
+        //waitTime(3380); // WarOfTheSky
     }
 
     private void removeFixes(boolean fresh) {
@@ -324,7 +332,7 @@ public class GambleBot implements AbortsOnEsc {
         if (enPos == null) {
             return null;
         }
-        return screen.getSubimage(enPos.x - 154, enPos.y + 18, 334, 20);
+        return screen.getSubimage(Math.max(enPos.x - 154, 0), enPos.y + 18, 334, 22);
     }
 
     private void factor() {

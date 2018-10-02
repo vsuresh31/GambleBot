@@ -27,6 +27,7 @@ public class ImageTools {
     }
 
     private static boolean colorEquals(int a, int b) {
+        // Could be reverted. Issue as due to gamble img not having transparent/alpha elements
         return Math.abs(a - b) <= 1;
     }
 
