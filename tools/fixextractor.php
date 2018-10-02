@@ -104,7 +104,7 @@ foreach ($greenPos as $point) {
         }
     }
 
-    if ($foundClusterIdx) {
+    if ($foundClusterIdx !== null) {
         $clusters[$foundClusterIdx][] = $point;
     } else {
         $clusters[] = [$point];
