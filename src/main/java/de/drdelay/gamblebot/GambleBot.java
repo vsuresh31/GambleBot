@@ -248,19 +248,24 @@ public class GambleBot implements AbortsOnEsc {
         factor = new Point(searcheye.x + factorButtonXOffset, searcheye.y + factorButtonYOffset);
         sourceIn = new Point(searcheye.x + itemFactoryInputXOffset, searcheye.y + itemFactoryInputYOffset);
 
-        prefGm = ScreenCoordinateTools.findRequiredItem("prefixGmbl.png", screen);
-        prefRe = ScreenCoordinateTools.findRequiredItem("prefixReset.png", screen);
-        suffGm = ScreenCoordinateTools.findRequiredItem("suffixGmbl.png", screen);
-        suffRe = ScreenCoordinateTools.findRequiredItem("suffixReset.png", screen);
-
         loadCfg();
+        checkGambleModeByFixes();
+
+        if (!prefixFound) {
+            prefGm = ScreenCoordinateTools.findRequiredItem("prefixGmbl.png", screen);
+            prefRe = ScreenCoordinateTools.findRequiredItem("prefixReset.png", screen);
+            logger.addLogLine("Prefix Gamble found at " + prefGm.x + "/" + prefGm.y);
+            logger.addLogLine("Prefix Removal found at " + prefRe.x + "/" + prefRe.y);
+        }
+        if (!suffixFound) {
+            suffGm = ScreenCoordinateTools.findRequiredItem("suffixGmbl.png", screen);
+            suffRe = ScreenCoordinateTools.findRequiredItem("suffixReset.png", screen);
+            logger.addLogLine("Suffix Gamble found at " + suffGm.x + "/" + suffGm.y);
+            logger.addLogLine("Suffix Removal found at " + suffRe.x + "/" + suffRe.y);
+        }
 
         itemIn = ScreenCoordinateTools.calculateItemAtIndex((this.inviSize - numberW) + 1, searcheye);
 
-        logger.addLogLine("Prefix Gamble found at " + prefGm.x + "/" + prefGm.y);
-        logger.addLogLine("Prefix Removal found at " + prefRe.x + "/" + prefRe.y);
-        logger.addLogLine("Suffix Gamble found at " + suffGm.x + "/" + suffGm.y);
-        logger.addLogLine("Suffix Removal found at " + suffRe.x + "/" + suffRe.y);
         logger.addLogLine("Item assumed (relative to searcheye-pos) at " + item.getX() + "/" + item.getY());
         logger.addLogLine("ItemIn set to (relative to searcheye-pos) " + itemIn.getX() + "/" + itemIn.getY());
         logger.addLogLine("FactorButton assumed (relative to searcheye-pos) at " + factor.getX() + "/" + factor.getY());
