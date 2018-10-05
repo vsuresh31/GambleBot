@@ -44,6 +44,22 @@ You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.pro
 * `numberW`: It's possible to auto-gamble a bunch of items at once - *default: 1*
 * `lastItemPos`: How much items / position of gamble-item in inventory - *default: 56*
 
+The file `config.txt` is the list of wanted fixes. The format is:
+
+```
+prefix1.png
+prefix2.png
+-
+suffix1.png
+```
+
+Each fix on a line, a line with only a dash separates prefixes from suffixes. You may use a format like the following to only gamble suffix:
+
+```
+-
+suffix1.png
+```
+
 ## Inventory
 
 ![Example Inventory](/res/example_inv.png)

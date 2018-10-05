@@ -83,6 +83,7 @@ public class GambleBot implements AbortsOnEsc {
     private void loopWeapons() {
         logger.setStatus("Running");
         for (int itemi = 0; itemi < numberW; itemi++) {
+            checkGambleModeByFixes();
             logger.addLogLine("Starting weapon " + itemi + " of " + (numberW - 1));
             logger.setStatus("Weapon " + itemi + " of " + (numberW - 1));
             gambleWeapon();
@@ -92,6 +93,18 @@ public class GambleBot implements AbortsOnEsc {
             gambles = 0;
         }
         logger.setStatus("Done");
+    }
+
+    private void checkGambleModeByFixes() {
+        if (prefixImg.isEmpty()) {
+            logger.addLogLine("Not gambling prefixes because empty fixlist");
+            prefixFound = true;
+        }
+
+        if (suffixImg.isEmpty()) {
+            logger.addLogLine("Not gambling suffixes because empty fixlist");
+            suffixFound = true;
+        }
     }
 
     private void gambleWeapon() {
