@@ -30,7 +30,9 @@ Check the [Releases][link-releases] section for compiled versions.
 * Copy or link the gambles, resets, *enchant.png* and identifier item you are using
 * Copy or link the fixes you specified
 * Set up your [ingame inventory](#inventory)
+* All files are loaded relative to your current working directory. For convenience, you should make sure that is where the JAR is located by "`cd`ing" there before starting.
 ``` bash
+$ cd /path/to/GambleBotDir/
 $ java -jar GambleBot.jar
 ```
 * Run the program (*cmd*) as admin if the Robot (mouse movement) doesn't work
