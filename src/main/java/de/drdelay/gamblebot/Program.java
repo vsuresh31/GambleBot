@@ -14,11 +14,16 @@ public class Program {
         System.out.println("Welcome to GambleBot!");
         System.out.println();
 
-        run();
+        String itemPosOverride = null;
+        if (args.length >= 1) {
+            itemPosOverride = args[0];
+        }
+
+        run(itemPosOverride);
 
     }
 
-    private static void run() {
+    private static void run(String itemPosOverride) {
 
         Properties defaultProperties = new Properties();
         defaultProperties.setProperty("factordelay", "400");
@@ -43,7 +48,7 @@ public class Program {
                 Integer.parseInt(prop.getProperty("factordelay")),
                 Integer.parseInt(prop.getProperty("showdelay")),
                 Integer.parseInt(prop.getProperty("numberW")),
-                Integer.parseInt(prop.getProperty("lastItemPos"))
+                Integer.parseInt((itemPosOverride != null) ? itemPosOverride : prop.getProperty("lastItemPos"))
         );
 
         System.out.println("Starting in 4s - focus the game-window!");

@@ -34,6 +34,7 @@ Check the [Releases][link-releases] section for compiled versions.
 $ java -jar GambleBot.jar
 ```
 * Run the program (*cmd*) as admin if the Robot (mouse movement) doesn't work
+* You may override `lastItemPos` (see below) by passing an CLI argument. This can be easier that adjusting the config file for every inventory change.
 
 ## Config
 
