@@ -6,7 +6,7 @@
 
     <groupId>de.drdelay.gamblebot</groupId>
     <artifactId>GambleBot</artifactId>
-    <version>2.0.0-preview-WarOfTheSky</version>
+    <version>2.0.0</version>
     <description>AceOnline laboratory item-fixes bot</description>
     <url>https://github.com/DrDelay/GambleBot</url>
 
