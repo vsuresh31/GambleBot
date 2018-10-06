@@ -63,6 +63,30 @@ Each fix on a line, a line with only a dash separates prefixes from suffixes. Yo
 suffix1.png
 ```
 
+## Working Directory
+
+Example structure of necessary files:
+
+```
+$ ls -1
+Agareth.png // Fix
+Aloken.png // Fix
+Bandit.png // Fix
+config.properties // Config
+config.txt // Fix-Config
+Demon.png // Fix
+enchant.png // Item-Name Identifier (Enchant String or clean Woo/Arrow/... image)
+GambleBot.jar // The compiled JAR
+Greave.png // Fix
+prefixGmbl.png
+prefixReset.png
+searcheye.png // Identifier item (Top-Left of your inventory). Even if it's a TownPortal, name it "searcheye.png"
+Stein.png // Fix
+suffixGmbl.png
+suffixReset.png
+Warrior.png // Fix
+```
+
 ## Inventory
 
 ![Example Inventory](/res/example_inv.png)
