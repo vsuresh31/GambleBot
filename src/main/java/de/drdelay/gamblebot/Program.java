@@ -30,6 +30,7 @@ public class Program {
         defaultProperties.setProperty("showdelay", "1250");
         defaultProperties.setProperty("numberW", "1");
         defaultProperties.setProperty("lastItemPos", "56");
+        defaultProperties.setProperty("atumClientVersion", "ep4");
 
         Properties prop = new Properties(defaultProperties);
 
@@ -48,7 +49,8 @@ public class Program {
                 Integer.parseInt(prop.getProperty("factordelay")),
                 Integer.parseInt(prop.getProperty("showdelay")),
                 Integer.parseInt(prop.getProperty("numberW")),
-                Integer.parseInt((itemPosOverride != null) ? itemPosOverride : prop.getProperty("lastItemPos"))
+                Integer.parseInt((itemPosOverride != null) ? itemPosOverride : prop.getProperty("lastItemPos")),
+                prop.getProperty("atumClientVersion")
         );
 
         System.out.println("Starting in 4s - focus the game-window!");

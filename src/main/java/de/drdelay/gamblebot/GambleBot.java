@@ -4,6 +4,7 @@ import de.drdelay.aobots.common.contracts.AbortsOnEsc;
 import de.drdelay.aobots.common.contracts.ShowStatusAble;
 import de.drdelay.aobots.common.exceptions.EscHitException;
 import de.drdelay.aobots.common.exceptions.RuntimeException;
+import de.drdelay.aobots.common.lab.AtumClientConfig;
 import de.drdelay.aobots.common.utils.*;
 
 import java.awt.*;
@@ -49,19 +50,10 @@ public class GambleBot implements AbortsOnEsc {
 
     private EscHitException shouldStop;
 
-    // Offsets /WarOfTheSky / EP3:
-    /*
-    private final static int factorButtonXOffset = 545;
-    private final static int factorButtonYOffset = 203;
-    private final static int itemFactoryInputXOffset = 467;
-    private final static int itemFactoryInputYOffset = 68;
-    */
-
-    // Offsets EP4 / CR
-    private final static int factorButtonXOffset = 632;
-    private final static int factorButtonYOffset = -24;
-    private final static int itemFactoryInputXOffset = 548;
-    private final static int itemFactoryInputYOffset = -157;
+    private final int factorButtonXOffset;
+    private final int factorButtonYOffset;
+    private final int itemFactoryInputXOffset;
+    private final int itemFactoryInputYOffset;
 
     public void run() throws RuntimeException {
         EscTermination escSrv = new EscTermination(this);
@@ -118,7 +110,7 @@ public class GambleBot implements AbortsOnEsc {
         }
     }
 
-    public GambleBot(ShowStatusAble logger, int factordelay, int showdelay, int numberW, int inviSize) throws RuntimeException {
+    public GambleBot(ShowStatusAble logger, int factordelay, int showdelay, int numberW, int inviSize, String atumClientVersion) throws RuntimeException {
         try {
             robot = new HumanEmulatingRobot();
         } catch (AWTException e) {
@@ -133,6 +125,18 @@ public class GambleBot implements AbortsOnEsc {
         this.showdelay = showdelay;
         this.numberW = numberW;
         this.inviSize = inviSize;
+
+        Point factorButtonOffset = AtumClientConfig.getFactorButtonOffset(atumClientVersion);
+        Point itemFactoryInputOffset = AtumClientConfig.getItemFactoryInputOffset(atumClientVersion);
+
+        if (factorButtonOffset == null || itemFactoryInputOffset == null) {
+            throw new RuntimeException("Unknown Client config");
+        }
+
+        factorButtonXOffset = factorButtonOffset.x;
+        factorButtonYOffset = factorButtonOffset.y;
+        itemFactoryInputXOffset = itemFactoryInputOffset.x;
+        itemFactoryInputYOffset = itemFactoryInputOffset.y;
 
         logger.setStatus("Created");
     }

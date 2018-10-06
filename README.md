@@ -46,6 +46,7 @@ You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.pro
 * `showdelay`: MS to hover the weapon between gamble attempts - *default: 1250*
 * `numberW`: It's possible to auto-gamble a bunch of items at once - *default: 1*
 * `lastItemPos`: How much items / position of gamble-item in inventory - *default: 56*
+* `atumClientVersion`: To calculate Factory-Button positions. Different for: `ep3` or `ep4` - *default: ep4*
 
 The file `config.txt` is the list of wanted fixes. The format is:
 
