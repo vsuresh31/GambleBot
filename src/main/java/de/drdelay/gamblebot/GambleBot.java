@@ -47,6 +47,7 @@ public class GambleBot implements AbortsOnEsc {
     private Integer showdelay;
     private Integer numberW;
     private Integer inviSize;
+    private boolean canUseDoubleClick = false;
 
     private EscHitException shouldStop;
 
@@ -125,6 +126,7 @@ public class GambleBot implements AbortsOnEsc {
         this.showdelay = showdelay;
         this.numberW = numberW;
         this.inviSize = inviSize;
+        this.canUseDoubleClick = atumClientVersion.equals("DA"); // todo: better switch for double click supported (EP4?)
 
         Point factorButtonOffset = AtumClientConfig.getFactorButtonOffset(atumClientVersion);
         Point itemFactoryInputOffset = AtumClientConfig.getItemFactoryInputOffset(atumClientVersion);
@@ -236,7 +238,7 @@ public class GambleBot implements AbortsOnEsc {
     private void moveItemIntoLab() {
         checkExit();
         //noinspection ConstantConditions
-        if (false) { // todo: switch for double click supported (EP4?)
+        if (this.canUseDoubleClick) {
             robot.doubleClick();
         } else {
             robot.dragDrop(sourceIn);
