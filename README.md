@@ -38,6 +38,11 @@ $ java -jar GambleBot.jar
 * Run the program (*cmd*) as admin if the Robot (mouse movement) doesn't work
 * You may override `lastItemPos` (see below) by passing an CLI argument. This can be easier that adjusting the config file for every inventory change.
 
+* It's best to run the game in borderless window mode. Fullscreen does not work.
+* Make sure you have the correct/normal font(-size) ingame (Windows text scaling setting)
+
+**A user-made guide by "Silence/unforgivn": https://cdn.discordapp.com/attachments/492409035128307712/655393049710559242/Guide_for_DrDelay_GambleBot_0.02.pdf**
+
 ## Config
 
 You can create a file `config`[`.properties`](https://en.wikipedia.org/wiki/.properties#Format) with these values:
