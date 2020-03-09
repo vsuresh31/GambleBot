@@ -41,7 +41,7 @@ $ java -jar GambleBot.jar
 * It's best to run the game in borderless window mode. Fullscreen does not work.
 * Make sure you have the correct/normal font(-size) ingame (Windows text scaling setting)
 
-**A user-made guide by "Silence/unforgivn": https://cdn.discordapp.com/attachments/492409035128307712/655393049710559242/Guide_for_DrDelay_GambleBot_0.02.pdf**
+**A user-made guide by "Silence/unforgivn": [Guide_for_DrDelay_GambleBot_0.02.pdf](/res/Guide_for_DrDelay_GambleBot_0.02.pdf)**
 
 ## Config
 
