@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static de.drdelay.aobots.common.utils.DelayService.waitTime;
@@ -126,7 +127,7 @@ public class GambleBot implements AbortsOnEsc {
         this.showdelay = showdelay;
         this.numberW = numberW;
         this.inviSize = inviSize;
-        this.canUseDoubleClick = atumClientVersion.equals("DA"); // todo: better switch for double click supported (EP4?)
+        this.canUseDoubleClick = Arrays.asList("ep4", "DA").contains(atumClientVersion); // ChromeRivals support doubleClick
 
         Point factorButtonOffset = AtumClientConfig.getFactorButtonOffset(atumClientVersion);
         Point itemFactoryInputOffset = AtumClientConfig.getItemFactoryInputOffset(atumClientVersion);
